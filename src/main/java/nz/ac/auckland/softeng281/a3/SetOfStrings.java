@@ -96,7 +96,19 @@ public class SetOfStrings {
 	 * @param other a SetOfStrings
 	 */
 	public SetOfStrings union(SetOfStrings other) {
-		throw new java.lang.UnsupportedOperationException("Not implemented yet.");
+		
+		SetOfStrings unionSet = new SetOfStrings();
+		
+		for (String elementInThis: this.elements) {
+			unionSet.insertElement(elementInThis);
+		}
+		
+		for (String elementInOther : other.elements) {
+			unionSet.insertElement(elementInOther);
+		}
+		
+		return unionSet;
+		
 	}
 
 	/**
