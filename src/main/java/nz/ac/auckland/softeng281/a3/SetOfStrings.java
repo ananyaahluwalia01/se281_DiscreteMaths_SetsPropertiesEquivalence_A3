@@ -108,9 +108,8 @@ public class SetOfStrings {
 		}
 		
 		return unionSet;
-		
 	}
-
+	
 	/**
 	 * determines the intersection of the current set with 'other' and returns the
 	 * new set which is the intersection of these two sets. This operation SHOULDN'T
