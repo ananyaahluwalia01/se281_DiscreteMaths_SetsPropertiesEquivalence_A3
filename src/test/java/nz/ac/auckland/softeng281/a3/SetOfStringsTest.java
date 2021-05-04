@@ -66,32 +66,47 @@ public class SetOfStringsTest {
 	}
 	
 	// testing intersection method for no overlapping elements
-		@Test
-		public void testIntersectionNoOverlap() {
+	@Test
+	public void testIntersectionNoOverlap() {
 
-			set1.insertElement("a");
-			set1.insertElement("b");
-			set2.insertElement("c");
-			set2.insertElement("d");
+		set1.insertElement("a");
+		set1.insertElement("b");
+		set2.insertElement("c");
+		set2.insertElement("d");
 			
-			assertEquals(0, set1.intersection(set2).size());
-		}
+		assertEquals(0, set1.intersection(set2).size());
+	}
 		
-	// testing intersection method for no overlapping elements
-		@Test
-		public void testDifference() {
+	// testing difference method
+	@Test
+	public void testDifference() {
 
-			set1.insertElement("a");
-			set1.insertElement("b");
-			set1.insertElement("c");
-			set2.insertElement("a");
+		set1.insertElement("a");
+		set1.insertElement("b");
+		set1.insertElement("c");
+		set2.insertElement("a");
 			
-			SetOfStrings expected = new SetOfStrings();
-			expected.insertElement("b");
-			expected.insertElement("c");
+		SetOfStrings expected = new SetOfStrings();
+		expected.insertElement("b");
+		expected.insertElement("c");
 					
-			assertEquals(expected, set1.difference(set2));
-		}
+		assertEquals(expected, set1.difference(set2));
+	}
+		
+	// testing difference method for all overlapping elements (e.g. 2 same sets)
+	@Test
+	public void testDifferenceNoDifference() {
+
+		set1.insertElement("a");
+		set1.insertElement("b");
+		set1.insertElement("c");
+		set2.insertElement("a");
+		set2.insertElement("b");
+		set2.insertElement("c");
+			
+					
+		assertEquals(0, set1.difference(set2).size());
+	}
 
 }
 
