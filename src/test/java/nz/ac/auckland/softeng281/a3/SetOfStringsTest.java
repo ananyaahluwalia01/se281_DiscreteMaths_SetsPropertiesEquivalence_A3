@@ -35,14 +35,19 @@ public class SetOfStringsTest {
 		assertEquals(expected, set1.union(set2));
 	}
 	
-	// testing union function for two functions containing the same element
+	// testing union function for two sets containing the same element creating set with only one instance of the element.
 	@Test
 	public void testUnionSameElement() {
 		set1.insertElement("a");
 		set2.insertElement("a");
 		
-		//assertEquals(expected, set1.union(set2));
 		assertEquals(set1.union(set2).size(), 1);
+	}
+	
+	// testing union function for two empty sets creating another empty set
+	@Test
+	public void testUnionEmptySets() {
+		assertEquals(set1.union(set2).size(), 0);
 	}
 
 }
