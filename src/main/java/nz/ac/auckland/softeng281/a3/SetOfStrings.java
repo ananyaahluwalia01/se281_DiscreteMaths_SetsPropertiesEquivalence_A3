@@ -138,7 +138,14 @@ public class SetOfStrings {
 	 * @return difference of the current object and other
 	 */
 	public SetOfStrings difference(SetOfStrings other) {
-		throw new java.lang.UnsupportedOperationException("Not implemented yet.");
+		SetOfStrings differenceSet = new SetOfStrings();
+
+		for (String elementInThis: this.elements) {
+			if (!other.isMember(elementInThis)) {
+				differenceSet.insertElement(elementInThis);
+			}
+		}
+		return differenceSet;
 	}
 
 	/**
