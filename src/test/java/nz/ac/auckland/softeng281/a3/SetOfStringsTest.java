@@ -61,7 +61,8 @@ public class SetOfStringsTest {
 
 		SetOfStrings expected = new SetOfStrings();
 		expected.insertElement("b");
-		assertEquals(expected, set1.union(set2));
+		
+		assertEquals(expected, set1.intersection(set2));
 	}
 
 }
