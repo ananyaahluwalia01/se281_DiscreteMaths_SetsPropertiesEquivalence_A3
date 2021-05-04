@@ -22,7 +22,7 @@ public class SetOfStringsTest {
 
 	}
 
-	
+	// testing union method
 	@Test
 	public void testUnion() {
 
@@ -48,6 +48,20 @@ public class SetOfStringsTest {
 	@Test
 	public void testUnionEmptySets() {
 		assertEquals(set1.union(set2).size(), 0);
+	}
+	
+	// testing intersection method
+	@Test
+	public void testIntersection() {
+
+		set1.insertElement("a");
+		set1.insertElement("b");
+		set2.insertElement("b");
+		set2.insertElement("c");
+
+		SetOfStrings expected = new SetOfStrings();
+		expected.insertElement("b");
+		assertEquals(expected, set1.union(set2));
 	}
 
 }
