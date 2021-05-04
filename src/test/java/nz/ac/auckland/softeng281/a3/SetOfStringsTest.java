@@ -64,5 +64,17 @@ public class SetOfStringsTest {
 		
 		assertEquals(expected, set1.intersection(set2));
 	}
+	
+	// testing intersection method for no overlapping elements
+		@Test
+		public void testIntersectionNoOverlap() {
+
+			set1.insertElement("a");
+			set1.insertElement("b");
+			set2.insertElement("c");
+			set2.insertElement("d");
+			
+			assertEquals(0, set1.intersection(set2).size());
+		}
 
 }
