@@ -122,11 +122,9 @@ public class SetOfStrings {
 		SetOfStrings intersectionSet = new SetOfStrings();
 
 		for (String elementInThis: this.elements) {
-			for (String elementInOther: this.elements) {
 				if (other.isMember(elementInThis)) {
 					intersectionSet.insertElement(elementInThis);
 				}
-			}
 		}
 
 		return intersectionSet;
