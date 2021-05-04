@@ -119,7 +119,17 @@ public class SetOfStrings {
 	 * @param other a SetOfStrings
 	 */
 	public SetOfStrings intersection(SetOfStrings other) {
-		throw new java.lang.UnsupportedOperationException("Not implemented yet.");
+		SetOfStrings intersectionSet = new SetOfStrings();
+
+		for (String elementInThis: this.elements) {
+			for (String elementInOther: this.elements) {
+				if (other.isMember(elementInThis)) {
+					intersectionSet.insertElement(elementInThis);
+				}
+			}
+		}
+
+		return intersectionSet;
 	}
 
 	/**
