@@ -96,21 +96,21 @@ public class SetOfStrings {
 	 * @param other a SetOfStrings
 	 */
 	public SetOfStrings union(SetOfStrings other) {
-		
+
 		SetOfStrings unionSet = new SetOfStrings();
-		
+
 		for (String elementInThis: this.elements) {
 			unionSet.insertElement(elementInThis);
 		}
-		
+
 		for (String elementInOther : other.elements) {
 			unionSet.insertElement(elementInOther);
 		}
-		
+
 		return unionSet;
-		
+
 	}
-	
+
 	/**
 	 * determines the intersection of the current set with 'other' and returns the
 	 * new set which is the intersection of these two sets. This operation SHOULDN'T

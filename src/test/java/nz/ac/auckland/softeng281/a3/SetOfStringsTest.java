@@ -34,22 +34,22 @@ public class SetOfStringsTest {
 		expected.insertElement("b");
 		assertEquals(expected, set1.union(set2));
 	}
-	
+
 	// testing union function for two sets containing the same element creating set with only one instance of the element.
 	@Test
 	public void testUnionSameElement() {
 		set1.insertElement("a");
 		set2.insertElement("a");
-		
+
 		assertEquals(set1.union(set2).size(), 1);
 	}
-	
+
 	// testing union function for two empty sets creating another empty set
 	@Test
 	public void testUnionEmptySets() {
 		assertEquals(set1.union(set2).size(), 0);
 	}
-	
+
 	// testing intersection method
 	@Test
 	public void testIntersection() {
@@ -61,10 +61,10 @@ public class SetOfStringsTest {
 
 		SetOfStrings expected = new SetOfStrings();
 		expected.insertElement("b");
-		
+
 		assertEquals(expected, set1.intersection(set2));
 	}
-	
+
 	// testing intersection method for no overlapping elements
 	@Test
 	public void testIntersectionNoOverlap() {
@@ -73,10 +73,10 @@ public class SetOfStringsTest {
 		set1.insertElement("b");
 		set2.insertElement("c");
 		set2.insertElement("d");
-			
+
 		assertEquals(0, set1.intersection(set2).size());
 	}
-		
+
 	// testing difference method
 	@Test
 	public void testDifference() {
@@ -85,14 +85,14 @@ public class SetOfStringsTest {
 		set1.insertElement("b");
 		set1.insertElement("c");
 		set2.insertElement("a");
-			
+
 		SetOfStrings expected = new SetOfStrings();
 		expected.insertElement("b");
 		expected.insertElement("c");
-					
+
 		assertEquals(expected, set1.difference(set2));
 	}
-		
+
 	// testing difference method for all overlapping elements (e.g. 2 same sets)
 	@Test
 	public void testDifferenceNoDifference() {
@@ -103,8 +103,8 @@ public class SetOfStringsTest {
 		set2.insertElement("a");
 		set2.insertElement("b");
 		set2.insertElement("c");
-			
-					
+
+
 		assertEquals(0, set1.difference(set2).size());
 	}
 
