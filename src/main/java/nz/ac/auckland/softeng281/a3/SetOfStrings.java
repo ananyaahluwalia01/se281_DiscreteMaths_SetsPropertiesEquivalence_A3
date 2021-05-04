@@ -126,7 +126,6 @@ public class SetOfStrings {
 				intersectionSet.insertElement(elementInThis);
 			}
 		}
-
 		return intersectionSet;
 	}
 
