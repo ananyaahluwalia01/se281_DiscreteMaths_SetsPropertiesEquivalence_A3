@@ -34,5 +34,15 @@ public class SetOfStringsTest {
 		expected.insertElement("b");
 		assertEquals(expected, set1.union(set2));
 	}
+	
+	// testing union function for two functions containing the same element
+	@Test
+	public void testUnionSameElement() {
+		set1.insertElement("a");
+		set2.insertElement("a");
+		
+		//assertEquals(expected, set1.union(set2));
+		assertEquals(set1.union(set2).size(), 1);
+	}
 
 }
