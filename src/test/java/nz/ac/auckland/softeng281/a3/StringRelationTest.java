@@ -21,7 +21,8 @@ public class StringRelationTest {
 	public void tearDown() {
 
 	}
-
+	
+	// testing reflexive method 
 	@Test
 	public void testReflexive() {
 		relation.insertElement("1,1");
