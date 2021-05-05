@@ -99,6 +99,7 @@ public class SetOfStrings {
 
 		SetOfStrings unionSet = new SetOfStrings();
 
+		// Cycles through elements in both sets and adds them to returned unionSet.
 		for (String elementInThis: this.elements) {
 			unionSet.insertElement(elementInThis);
 		}
@@ -121,7 +122,10 @@ public class SetOfStrings {
 	public SetOfStrings intersection(SetOfStrings other) {
 		SetOfStrings intersectionSet = new SetOfStrings();
 
+		// cycles through elements in current set
 		for (String elementInThis: this.elements) {
+
+			// if current element from This is also in Other, adds it to returned set.
 			if (other.isMember(elementInThis)) {
 				intersectionSet.insertElement(elementInThis);
 			}
@@ -140,8 +144,11 @@ public class SetOfStrings {
 	public SetOfStrings difference(SetOfStrings other) {
 		SetOfStrings differenceSet = new SetOfStrings();
 
+		// cycles through elements in current set
 		for (String elementInThis: this.elements) {
-			if (!other.isMember(elementInThis)) {
+
+			// if current element from This is not in Other, adds it to returned set.
+			if (!other.isMember(elementInThis)) { 
 				differenceSet.insertElement(elementInThis);
 			}
 		}
