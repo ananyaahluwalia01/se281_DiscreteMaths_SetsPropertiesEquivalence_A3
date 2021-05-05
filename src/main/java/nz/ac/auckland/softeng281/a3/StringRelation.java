@@ -44,8 +44,17 @@ public class StringRelation extends SetOfStrings {
 	public boolean isReflexive() {
 		if (!isValid()) {
 			return false;
+		} else {
+			//members = vertex, elements = relation
+			for (String memberInThis: this.setMembers.getElements()) {
+				String relation = memberInThis + "," + memberInThis;
+				if (!this.isMember(relation)) {
+					return false;
+				}
+			}
+			return true;
+			
 		}
-		throw new java.lang.UnsupportedOperationException("Not implemented yet.");
 
 	}
 
