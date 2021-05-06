@@ -88,8 +88,7 @@ public class StringRelation extends SetOfStrings {
 			return false;
 		} else {
 			
-			// loop through the edges and split into the nodes twice (nested for loop).
-			// cross checking every edge against the other edges on the list
+			// loop through edges and split into the nodes, check every edge against the other edges on the list (nested for loop)
 			for (String relationI: this.getElements()) {
 				String[] relationINodes = relationI.split(",");
 				
