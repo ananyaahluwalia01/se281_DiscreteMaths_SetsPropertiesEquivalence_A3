@@ -38,5 +38,18 @@ public class StringRelationTest {
 		setMembers.insertElement("2");			
 		assertTrue(!relation.isReflexive());
 	}
+	
+	// testing reflexive method for a relation thats not reflexive, because one of the members doesn't have an edge to itself
+	@Test
+	public void testReflexiveFalseNotAll() {
+		relation.insertElement("1,2");
+		relation.insertElement("1,1");
+		relation.insertElement("2,2");
+		setMembers.insertElement("1");
+		setMembers.insertElement("2");	
+		setMembers.insertElement("3");	
+		
+		assertTrue(!relation.isReflexive());
+	}
 
 }
