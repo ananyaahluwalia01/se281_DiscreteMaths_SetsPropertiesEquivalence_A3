@@ -20,12 +20,12 @@ import org.junit.runners.Suite.SuiteClasses;
 @RunWith(Suite.class)
 @SuiteClasses({
 
-		TestsForMarking.Task1Test.class, //
-		TestsForMarking.Task2Test.class, //
-		TestsForMarking.Task3Test.class, //
-		TestsForMarking.Task4Test.class, //
-		TestsForMarking.Task5Test.class, //
-		TestsForMarking.Task6Test.class,
+	TestsForMarking.Task1Test.class, //
+	TestsForMarking.Task2Test.class, //
+	TestsForMarking.Task3Test.class, //
+	TestsForMarking.Task4Test.class, //
+	TestsForMarking.Task5Test.class, //
+	TestsForMarking.Task6Test.class,
 
 })
 public class TestsForMarking {
@@ -149,7 +149,7 @@ public class TestsForMarking {
 			System.setOut(origOut);
 			if (myOut.toString().length() > 1) {
 				System.out.println(System.lineSeparator() + "the System.out.print was :" + System.lineSeparator()
-						+ myOut.toString());
+				+ myOut.toString());
 			}
 		}
 
@@ -236,7 +236,7 @@ public class TestsForMarking {
 			System.setOut(origOut);
 			if (myOut.toString().length() > 1) {
 				System.out.println(System.lineSeparator() + "the System.out.print was :" + System.lineSeparator()
-						+ myOut.toString());
+				+ myOut.toString());
 			}
 		}
 
@@ -324,7 +324,7 @@ public class TestsForMarking {
 			System.setOut(origOut);
 			if (myOut.toString().length() > 1) {
 				System.out.println(System.lineSeparator() + "the System.out.print was :" + System.lineSeparator()
-						+ myOut.toString());
+				+ myOut.toString());
 			}
 		}
 
@@ -412,7 +412,7 @@ public class TestsForMarking {
 			System.setOut(origOut);
 			if (myOut.toString().length() > 1) {
 				System.out.println(System.lineSeparator() + "the System.out.print was :" + System.lineSeparator()
-						+ myOut.toString());
+				+ myOut.toString());
 			}
 		}
 
@@ -503,7 +503,7 @@ public class TestsForMarking {
 			System.setOut(origOut);
 			if (myOut.toString().length() > 1) {
 				System.out.println(System.lineSeparator() + "the System.out.print was :" + System.lineSeparator()
-						+ myOut.toString());
+				+ myOut.toString());
 			}
 		}
 
