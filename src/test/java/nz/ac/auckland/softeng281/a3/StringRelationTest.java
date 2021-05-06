@@ -21,13 +21,22 @@ public class StringRelationTest {
 	public void tearDown() {
 
 	}
-	
+
 	// testing reflexive method 
 	@Test
 	public void testReflexive() {
 		relation.insertElement("1,1");
 		setMembers.insertElement("1");
 		assertTrue(relation.isReflexive());
+	}
+
+	// testing reflexive method for a relation thats not reflexive
+	@Test
+	public void testReflexiveFalse() {
+		relation.insertElement("1,2");
+		setMembers.insertElement("1");
+		setMembers.insertElement("2");			
+		assertTrue(!relation.isReflexive());
 	}
 
 }
