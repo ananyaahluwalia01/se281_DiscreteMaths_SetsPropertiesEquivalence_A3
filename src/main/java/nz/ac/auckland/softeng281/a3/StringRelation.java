@@ -73,11 +73,6 @@ public class StringRelation extends SetOfStrings {
 				// split the current edge by the comma, giving the two nodes it connects
 				String[] relationNodes = relationInThis.split(",");
 				
-				// if the current order of the nodes: nodeA,nodeB is not an edge, return false
-				if (!this.isMember(relationNodes[0] + "," + relationNodes[1])) {
-					return false;
-				}
-				
 				// if the alternate order of the nodes: nodeB,nodeA is not an edge, return false
 				if (!this.isMember(relationNodes[1] + "," + relationNodes[0])) {
 					return false;
