@@ -62,6 +62,7 @@ public class StringRelation extends SetOfStrings {
 
 	// members = vertex, elements = relation
 	public boolean isSymmetric() {
+		// if relation is not a subset of the Cartesian product of the set, return false (invalid)
 		if (!isValid()) {
 			return false;
 		}
