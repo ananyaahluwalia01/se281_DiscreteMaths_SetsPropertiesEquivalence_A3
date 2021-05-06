@@ -62,5 +62,20 @@ public class StringRelationTest {
 			
 		assertTrue(relation.isSymmetric());
 	}
+	
+	// testing symmetric method false (relation isn't symmetric)
+	@Test
+	public void testSymmetricFalse() {
+		relation.insertElement("1,2");
+		relation.insertElement("2,1");
+		relation.insertElement("3,1");
+		setMembers.insertElement("1");
+		setMembers.insertElement("2");	
+		setMembers.insertElement("3");	
+			
+		assertTrue(!relation.isSymmetric());
+	}
+	
+	
 
 }
