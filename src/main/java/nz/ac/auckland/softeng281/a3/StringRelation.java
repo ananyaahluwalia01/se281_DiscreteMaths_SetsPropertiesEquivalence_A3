@@ -42,22 +42,25 @@ public class StringRelation extends SetOfStrings {
 	}
 
 	public boolean isReflexive() {
+
+		// if relation is not a subset of the Cartesian product of the set, return false (invalid)
 		if (!isValid()) {
 			return false;
 		} else {
-			//members = vertex, elements = relation
+			// if relation valid, loop through the members in setMembers
 			for (String memberInThis: this.setMembers.getElements()) {
+
+				// if there is not a relation of every member with an edge to itself, return false.
 				String relation = memberInThis + "," + memberInThis;
 				if (!this.isMember(relation)) {
 					return false;
 				}
 			}
 			return true;
-			
 		}
-
 	}
 
+	// members = vertex, elements = relation
 	public boolean isSymmetric() {
 		if (!isValid()) {
 			return false;
