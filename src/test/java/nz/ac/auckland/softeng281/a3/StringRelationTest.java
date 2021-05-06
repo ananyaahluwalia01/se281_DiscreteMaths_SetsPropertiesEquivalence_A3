@@ -51,5 +51,16 @@ public class StringRelationTest {
 		
 		assertTrue(!relation.isReflexive());
 	}
+	
+	// testing symmetric method
+	@Test
+	public void testSymmetric() {
+		relation.insertElement("1,2");
+		relation.insertElement("2,1");
+		setMembers.insertElement("1");
+		setMembers.insertElement("2");	
+			
+		assertTrue(relation.isSymmetric());
+	}
 
 }
