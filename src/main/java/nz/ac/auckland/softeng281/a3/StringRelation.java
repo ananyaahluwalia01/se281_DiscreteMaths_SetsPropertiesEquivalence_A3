@@ -87,19 +87,23 @@ public class StringRelation extends SetOfStrings {
 		if (!isValid()) {
 			return false;
 		} else {
-
+			
+			// loop through the edges and split into the nodes twice (nested for loop).
+			// cross checking every edge against the other edges on the list
 			for (String relationI: this.getElements()) {
 				String[] relationINodes = relationI.split(",");
-
+				
 				for (String relationJ: this.getElements()) {
 					String[] relationJNodes = relationJ.split(",");
-
+					
+					// if the relations (a,b),(c,d) exist such that a=d, make sure (c,b) is in the relation
 					if (relationINodes[0].equals(relationJNodes[1])) {
 						if (!this.isMember(relationJNodes[0] + "," + relationINodes[1])) {
 							return false;
 						}
 					}
-
+					
+					// if the relations (a,b),(c,d) exist such that b=c, make sure (a,d) is in the relation
 					if (relationINodes[1].equals(relationJNodes[0])) {
 						if (!this.isMember(relationINodes[0] + "," + relationJNodes[1])) {
 							return false;

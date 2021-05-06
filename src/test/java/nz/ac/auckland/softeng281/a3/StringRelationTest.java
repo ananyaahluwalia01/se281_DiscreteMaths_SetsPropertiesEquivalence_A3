@@ -76,7 +76,7 @@ public class StringRelationTest {
 		assertTrue(!relation.isSymmetric());
 	}
 	
-	// testing symmetric method
+	// testing transitive method
 	@Test
 	public void testTransitive() {
 		relation.insertElement("1,2");
@@ -89,6 +89,21 @@ public class StringRelationTest {
 
 		assertTrue(relation.isTransitive());
 	}
+	
+	// testing transitive method true again
+		@Test
+		public void testTransitiveTrue2() {
+			relation.insertElement("1,1");
+			relation.insertElement("2,2");
+			relation.insertElement("3,3");
+			relation.insertElement("1,2");
+
+			setMembers.insertElement("1");
+			setMembers.insertElement("2");	
+			setMembers.insertElement("3");	
+
+			assertTrue(relation.isTransitive());
+		}
 	
 	
 
