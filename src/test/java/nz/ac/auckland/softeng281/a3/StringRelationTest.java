@@ -82,6 +82,7 @@ public class StringRelationTest {
 		relation.insertElement("1,2");
 		relation.insertElement("2,3");
 		relation.insertElement("1,3");
+
 		setMembers.insertElement("1");
 		setMembers.insertElement("2");	
 		setMembers.insertElement("3");	
