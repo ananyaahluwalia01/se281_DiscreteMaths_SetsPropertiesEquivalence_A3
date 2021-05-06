@@ -38,7 +38,7 @@ public class StringRelationTest {
 		setMembers.insertElement("2");			
 		assertTrue(!relation.isReflexive());
 	}
-	
+
 	// testing reflexive method for a relation thats not reflexive, because one of the members doesn't have an edge to itself
 	@Test
 	public void testReflexiveFalseNotAll() {
@@ -48,10 +48,20 @@ public class StringRelationTest {
 		setMembers.insertElement("1");
 		setMembers.insertElement("2");	
 		setMembers.insertElement("3");	
-		
+
 		assertTrue(!relation.isReflexive());
 	}
-	
+
+	// testing reflexive method for an empty R
+	@Test
+	public void testReflexiveEmpty() {
+		setMembers.insertElement("1");
+		setMembers.insertElement("2");	
+		setMembers.insertElement("3");	
+
+		assertTrue(!relation.isReflexive());
+	}
+
 	// testing symmetric method
 	@Test
 	public void testSymmetric() {
@@ -59,10 +69,10 @@ public class StringRelationTest {
 		relation.insertElement("2,1");
 		setMembers.insertElement("1");
 		setMembers.insertElement("2");	
-			
+
 		assertTrue(relation.isSymmetric());
 	}
-	
+
 	// testing symmetric method false (relation isn't symmetric)
 	@Test
 	public void testSymmetricFalse() {
@@ -72,10 +82,20 @@ public class StringRelationTest {
 		setMembers.insertElement("1");
 		setMembers.insertElement("2");	
 		setMembers.insertElement("3");	
-			
+
 		assertTrue(!relation.isSymmetric());
 	}
-	
+
+	// testing symmetric method for an empty R
+	@Test
+	public void testSymmetricEmpty() {
+		setMembers.insertElement("1");
+		setMembers.insertElement("2");	
+		setMembers.insertElement("3");	
+
+		assertTrue(relation.isSymmetric());
+	}	
+
 	// testing transitive method
 	@Test
 	public void testTransitive() {
@@ -89,22 +109,30 @@ public class StringRelationTest {
 
 		assertTrue(relation.isTransitive());
 	}
-	
+
 	// testing transitive method true again
-		@Test
-		public void testTransitiveTrue2() {
-			relation.insertElement("1,1");
-			relation.insertElement("2,2");
-			relation.insertElement("3,3");
-			relation.insertElement("1,2");
+	@Test
+	public void testTransitiveTrue2() {
+		relation.insertElement("1,1");
+		relation.insertElement("2,2");
+		relation.insertElement("3,3");
+		relation.insertElement("1,2");
 
-			setMembers.insertElement("1");
-			setMembers.insertElement("2");	
-			setMembers.insertElement("3");	
+		setMembers.insertElement("1");
+		setMembers.insertElement("2");	
+		setMembers.insertElement("3");	
 
-			assertTrue(relation.isTransitive());
-		}
-	
-	
+		assertTrue(relation.isTransitive());
+	}
+
+	// testing reflexive method for an empty R
+	@Test
+	public void testTransitiveEmpty() {
+		setMembers.insertElement("1");
+		setMembers.insertElement("2");	
+		setMembers.insertElement("3");	
+
+		assertTrue(relation.isTransitive());
+	}
 
 }
