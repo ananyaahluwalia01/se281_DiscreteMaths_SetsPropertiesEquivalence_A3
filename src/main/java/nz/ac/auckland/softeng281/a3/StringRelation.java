@@ -49,7 +49,7 @@ public class StringRelation extends SetOfStrings {
 		} else {
 			// if relation valid, loop through the members in setMembers
 			for (String memberInThis: this.setMembers.getElements()) {
-
+				
 				// if there is not a relation of every member with an edge to itself, return false.
 				String relation = memberInThis + "," + memberInThis;
 				if (!this.isMember(relation)) {
@@ -65,9 +65,27 @@ public class StringRelation extends SetOfStrings {
 		// if relation is not a subset of the Cartesian product of the set, return false (invalid)
 		if (!isValid()) {
 			return false;
+		} else {
+			
+			// if relation valid, loop through the relations in this
+			for (String relationInThis: this.getElements()) {
+				
+				// split the current edge by the comma, giving the two nodes it connects
+				String[] relationNodes = relationInThis.split(",");
+				
+				// if the current order of the nodes: nodeA,nodeB is not an edge, return false
+				if (!this.isMember(relationNodes[0] + "," + relationNodes[1])) {
+					return false;
+				}
+				
+				// if the alternate order of the nodes: nodeB,nodeA is not an edge, return false
+				if (!this.isMember(relationNodes[1] + "," + relationNodes[0])) {
+					return false;
+				}
+			}
+			
+			return true;
 		}
-		throw new java.lang.UnsupportedOperationException("Not implemented yet.");
-
 	}
 
 	public boolean isTransitive() {
