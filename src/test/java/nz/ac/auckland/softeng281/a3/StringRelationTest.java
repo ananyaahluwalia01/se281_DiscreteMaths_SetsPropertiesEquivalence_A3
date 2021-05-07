@@ -151,4 +151,24 @@ public class StringRelationTest {
 		assertTrue(relation.isTransitive());
 	}
 
+	// testing equivalence method
+	@Test
+	public void testEquivalence() {
+		setMembers.insertElement("1");
+		setMembers.insertElement("2");	
+		setMembers.insertElement("3");
+		relation.insertElement("1,1");
+		relation.insertElement("2,2");
+		relation.insertElement("3,3");
+		relation.insertElement("1,2");
+		relation.insertElement("2,1");
+		relation.insertElement("1,3");
+		relation.insertElement("3,1");
+		relation.insertElement("2,3");
+		relation.insertElement("3,2");
+	
+
+		assertTrue(relation.isEquivalence());
+	}
+
 }

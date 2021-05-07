@@ -69,6 +69,7 @@ public class StringRelation extends SetOfStrings {
 
 			// if relation valid, loop through the relations in this
 			for (String relationInThis: this.getElements()) {
+				
 				// split the current edge by the comma, giving the two nodes it connects
 				String[] relationNodes = relationInThis.split(",");
 
