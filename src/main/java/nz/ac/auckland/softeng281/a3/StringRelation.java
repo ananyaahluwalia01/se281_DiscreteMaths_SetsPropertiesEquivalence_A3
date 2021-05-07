@@ -115,7 +115,12 @@ public class StringRelation extends SetOfStrings {
 	}
 
 	public boolean isEquivalence() {
-		throw new java.lang.UnsupportedOperationException("Not implemented yet.");
+		// checks if all functions return true, before returning true
+		if (this.isReflexive() && this.isSymmetric() && this.isTransitive()) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/**
