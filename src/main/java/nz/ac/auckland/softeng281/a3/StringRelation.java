@@ -69,7 +69,7 @@ public class StringRelation extends SetOfStrings {
 
 			// if relation valid, loop through the relations in this
 			for (String relationInThis: this.getElements()) {
-				
+
 				// split the current edge by the comma, giving the two nodes it connects
 				String[] relationNodes = relationInThis.split(",");
 
@@ -138,6 +138,18 @@ public class StringRelation extends SetOfStrings {
 	}
 
 	public SetOfStrings computeEqClass(String node) {
-		throw new java.lang.UnsupportedOperationException("Not implemented yet.");
+		SetOfStrings returnEqClass = new SetOfStrings();
+
+		// Check if any relations have The Node as a node. If yes, add to returned set.
+		for (String relationInThis: this.getElements()) {
+			String[] relationNodes = relationInThis.split(",");
+
+			if (node.equals(relationNodes[0])) {
+				returnEqClass.insertElement(relationNodes[1]);
+			} else if (node.equals(relationNodes[1])) {
+				returnEqClass.insertElement(relationNodes[0]);
+			}
+		}
+		return returnEqClass;
 	}
 }

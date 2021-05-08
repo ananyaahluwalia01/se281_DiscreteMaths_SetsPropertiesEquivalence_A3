@@ -166,11 +166,11 @@ public class StringRelationTest {
 		relation.insertElement("3,1");
 		relation.insertElement("2,3");
 		relation.insertElement("3,2");
-	
+
 
 		assertTrue(relation.isEquivalence());
 	}
-	
+
 	// testing equivalence class
 	@Test 
 	public void testComputeEqClass() {
@@ -186,7 +186,7 @@ public class StringRelationTest {
 		relation.insertElement("3,1");
 		relation.insertElement("2,3");
 		relation.insertElement("3,2");
-	
+
 		SetOfStrings expected = new SetOfStrings();
 		expected.insertElement("1");
 		expected.insertElement("2");
@@ -194,6 +194,6 @@ public class StringRelationTest {
 
 		assertTrue(expected.equals(relation.computeEqClass("1")));
 	}
-	
+
 
 }
