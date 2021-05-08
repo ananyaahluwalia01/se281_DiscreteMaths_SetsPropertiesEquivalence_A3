@@ -59,6 +59,10 @@ public class StringRelation extends SetOfStrings {
 		}
 	}
 
+	// method to split an edge by the comma, giving the two nodes it connects
+	private String[] splitRelation(String relation) {
+		return relation.split(",");
+	}
 
 	// members = vertex, elements = relation
 	public boolean isSymmetric() {
@@ -71,7 +75,7 @@ public class StringRelation extends SetOfStrings {
 			for (String relationInThis: this.getElements()) {
 
 				// split the current edge by the comma, giving the two nodes it connects
-				String[] relationNodes = relationInThis.split(",");
+				String[] relationNodes = splitRelation(relationInThis);
 
 				// if the alternate order of the nodes: nodeB,nodeA is not an edge, return false
 				if (!this.isMember(relationNodes[1] + "," + relationNodes[0])) {
@@ -90,10 +94,10 @@ public class StringRelation extends SetOfStrings {
 
 			// if relation valid loop through edges and split into the nodes, check every edge against the other edges on the list (nested for loop)
 			for (String relationI: this.getElements()) {
-				String[] relationINodes = relationI.split(",");
+				String[] relationINodes = splitRelation(relationI);;
 
 				for (String relationJ: this.getElements()) {
-					String[] relationJNodes = relationJ.split(",");
+					String[] relationJNodes = splitRelation(relationJ);;
 
 					// if the relations (a,b),(c,d) exist such that a=d, make sure (c,b) is in the relation
 					if (relationINodes[0].equals(relationJNodes[1])) {
@@ -142,7 +146,7 @@ public class StringRelation extends SetOfStrings {
 
 		// Check if any relations have The Node as a node. If yes, add what they connect to, to returned set.
 		for (String relationInThis: this.getElements()) {
-			String[] relationNodes = relationInThis.split(",");
+			String[] relationNodes = splitRelation(relationInThis);;
 
 			if (node.equals(relationNodes[0])) {
 				returnEqClass.insertElement(relationNodes[1]);
