@@ -170,5 +170,30 @@ public class StringRelationTest {
 
 		assertTrue(relation.isEquivalence());
 	}
+	
+	// testing equivalence class
+	@Test 
+	public void testComputeEqClass() {
+		setMembers.insertElement("1");
+		setMembers.insertElement("2");	
+		setMembers.insertElement("3");
+		relation.insertElement("1,1");
+		relation.insertElement("2,2");
+		relation.insertElement("3,3");
+		relation.insertElement("1,2");
+		relation.insertElement("2,1");
+		relation.insertElement("1,3");
+		relation.insertElement("3,1");
+		relation.insertElement("2,3");
+		relation.insertElement("3,2");
+	
+		SetOfStrings expected = new SetOfStrings();
+		expected.insertElement("1");
+		expected.insertElement("2");
+		expected.insertElement("3");
+
+		assertTrue(expected.equals(relation.computeEqClass("1")));
+	}
+	
 
 }
