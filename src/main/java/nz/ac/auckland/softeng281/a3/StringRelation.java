@@ -40,13 +40,13 @@ public class StringRelation extends SetOfStrings {
 		SetOfStrings product = setMembers.product(setMembers);
 		return product.isSupersetOf(this);
 	}
-	
+
 	public boolean isReflexive() {
 		// if relation is not a subset of the Cartesian product of the set, return false (invalid)
 		if (!isValid()) {
 			return false;
 		} else {
-			
+
 			// if relation valid, loop through the members in setMembers
 			for (String memberInThis: this.setMembers.getElements()) {
 
@@ -58,7 +58,7 @@ public class StringRelation extends SetOfStrings {
 			return true;
 		}
 	}
-	
+
 
 	// members = vertex, elements = relation
 	public boolean isSymmetric() {
@@ -140,7 +140,7 @@ public class StringRelation extends SetOfStrings {
 	public SetOfStrings computeEqClass(String node) {
 		SetOfStrings returnEqClass = new SetOfStrings();
 
-		// Check if any relations have The Node as a node. If yes, add to returned set.
+		// Check if any relations have The Node as a node. If yes, add what they connect to, to returned set.
 		for (String relationInThis: this.getElements()) {
 			String[] relationNodes = relationInThis.split(",");
 
